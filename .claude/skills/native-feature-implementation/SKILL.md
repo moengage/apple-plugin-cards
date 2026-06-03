@@ -32,7 +32,7 @@ iOS SDK API to hybrid frameworks via the cards plugin bridge.
 **Cards is architecturally different from iOS-PluginBase and apple-plugin-geofence:**
 
 | Concern | How cards does it |
-|---|---|
+| --- | --- |
 | Bridge entry point | `MoEngagePluginCardsBridge.swift` — single `@objc final public class` |
 | Native calls | Via `handler: MoEngagePluginCardsBridgeHandler` protocol — never `MoEngageSDKCards.sharedInstance` directly |
 | identifier | `Optional<String>` — always `guard let identifier = MoEngagePluginUtils.fetchIdentifierFromPayload(attribute: payload)` |
@@ -94,7 +94,7 @@ https://raw.githubusercontent.com/moengage/mobile-sdk-contracts/<contractBranch>
 ### 1.3 Classify
 
 | File status | Meaning |
-|---|---|
+| --- | --- |
 | **New file** added | New method — full bridge implementation needed (Phase 2 required) |
 | **Existing file** modified | Payload change only — update existing method, skip Phase 2 |
 
@@ -105,7 +105,7 @@ For **payload changes on existing files**:
 For new files:
 
 | New contract files | Classification |
-|---|---|
+| --- | --- |
 | `hybridToNative` only | **Fire-and-forget** (Type 1) — no response |
 | both `hybridToNative` and `nativeToHybrid` | **Completion handler** (Type 2) — bridge method takes `completionHandler` param |
 
@@ -218,7 +218,7 @@ Follow the pattern of `MoEngageCardsData.swift` — an `extension <Model>: Hybri
 Read the relevant example file before generating code:
 
 | Type | Example file |
-|---|---|
+| --- | --- |
 | Type 1 — fire-and-forget | `examples/Type1_FireAndForget.swift` |
 | Type 2 — completion handler | `examples/Type2_CompletionHandler.swift` |
 
