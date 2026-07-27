@@ -1,3 +1,9 @@
+# Release Date
+
+## Release Version
+
+- [minor] MOEN-46338: Added support for the MoEngage iOS SDK 11.0.0 major release
+
 # 01-07-2026
 
 ## 3.11.0

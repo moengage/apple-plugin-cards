@@ -415,42 +415,42 @@ import MoEngageCards
 protocol MoEngagePluginCardsBridgeHandler {
     func onAppOpenSync(
         forAppID appID: String?,
-        withCompletion completionBlock: ((_ data: MoEngageCardSyncCompleteData?) -> Void)?
+        withCompletion completionBlock: (@MainActor @Sendable (_ data: MoEngageCardSyncCompleteData?) -> Void)?
     )
 
     func onCardSectionLoaded(
         forAppID appID: String?,
-        withCompletion completionBlock: ((_ data: MoEngageCardSyncCompleteData?) -> Void)?
+        withCompletion completionBlock: (@MainActor @Sendable (_ data: MoEngageCardSyncCompleteData?) -> Void)?
     )
 
     func refreshCards(
         forAppID appID: String?,
-        withCompletion completionBlock: ((_ data: MoEngageCardSyncCompleteData?) -> Void)?
+        withCompletion completionBlock: (@MainActor @Sendable (_ data: MoEngageCardSyncCompleteData?) -> Void)?
     )
 
     func fetchCards(
         forAppID appID: String?,
-        withCompletion completionBlock: ((_ data: MoEngageCardData?) -> Void)?
+        withCompletion completionBlock: (@MainActor @Sendable (_ data: MoEngageCardData?) -> Void)?
     )
 
     func getCardsData(
         forAppID appID: String?,
-        withCompletionBlock completionBlock: @escaping ((_ cardsData: MoEngageCardsData?, _ accountMeta: MoEngageAccountMeta?) -> Void)
+        withCompletionBlock completionBlock: @escaping @MainActor @Sendable (_ cardsData: MoEngageCardsData?, _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 
     func getCardsCategories(
         forAppID appID: String?,
         withCompletionBlock completionBlock:
-        @escaping ((_ categories: [String], _ accountMeta: MoEngageAccountMeta?) -> ())
+        @escaping @MainActor @Sendable (_ categories: [String], _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 
     func getCardData(for category: String,
                      appID: String?,
-                     completionBlock: @escaping (MoEngageCardData?) -> Void)
-    
+                     completionBlock: @escaping @MainActor @Sendable (MoEngageCardData?) -> Void)
+
     func isAllCategoryEnabled(
         forAppID appID: String?,
-        withCompletionBlock completionBlock: @escaping ((Bool) -> Void)
+        withCompletionBlock completionBlock: @escaping @MainActor @Sendable (Bool) -> Void
     )
 
     func cardShown(_ card: MoEngageCardCampaign, forAppID appID: String?)
@@ -464,7 +464,7 @@ protocol MoEngagePluginCardsBridgeHandler {
         _ cardsArr: [MoEngageCardCampaign],
         forAppID appID: String?,
         andCompletionBlock completionBlock:
-        @escaping ((_ isDeleted: Bool, _ accountMeta: MoEngageAccountMeta?) -> ())
+        @escaping @MainActor @Sendable (_ isDeleted: Bool, _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 
     func cardsViewControllerDismissed(forAppID appID: String?)
@@ -472,20 +472,20 @@ protocol MoEngagePluginCardsBridgeHandler {
     func getNewCardsCount(
         forAppID appID: String?,
         withCompletionBlock completionBlock:
-        @escaping ((_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void)
+        @escaping @MainActor @Sendable (_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 
 
     func getUnclickedCardsCount(
         forAppID appID: String?,
         withCompletionBlock completionBlock:
-        @escaping ((_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void)
+        @escaping @MainActor @Sendable (_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 
     func getClickedCardsCount(
         forAppID appID: String?,
         withCompletionBlock completionBlock:
-        @escaping ((_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void)
+        @escaping @MainActor @Sendable (_ count: Int, _ accountMeta: MoEngageAccountMeta?) -> Void
     )
 }
 
