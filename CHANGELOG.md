@@ -1,8 +1,10 @@
-# Release Date
+# 06-08-2026
 
-## Release Version
+## 4.00.0
 
-- [minor] MOEN-46338: Added support for the MoEngage iOS SDK 11.0.0 major release
+- Updated MoEngage-iOS-SDK to 11.00.0
+- Updated MoEngagePluginBase to 7.00.0
+- MOEN-46338: Added support for the MoEngage iOS SDK 11.0.0 major release
 
 # 01-07-2026
 
